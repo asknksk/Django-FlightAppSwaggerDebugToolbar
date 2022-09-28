@@ -1,4 +1,4 @@
-from xml.etree.ElementInclude import include
+from distutils.debug import DEBUG
 from django.contrib import admin
 from django.urls import path, include
 # Three modules for swagger:
@@ -29,4 +29,9 @@ urlpatterns = [
     path("redoc/", schema_view.with_ui("redoc",
          cache_timeout=0), name="schemaredoc"),
     path('__debug__/', include('debug_toolbar.urls')),
+
+    path('user/', include('users.urls'))
 ]
+
+""" if DEBUG:
+    urlpatterns += path('__debug__/', include('debug_toolbar.urls')) """

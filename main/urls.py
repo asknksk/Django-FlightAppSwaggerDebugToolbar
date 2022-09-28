@@ -30,7 +30,7 @@ urlpatterns = [
          cache_timeout=0), name="schemaredoc"),
     path('__debug__/', include('debug_toolbar.urls')),
 
-    path('user/', include('users.urls'))
+    path('users/', include('users.urls'))
 ]
 
 """ if DEBUG:
